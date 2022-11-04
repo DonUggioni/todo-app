@@ -1,0 +1,19 @@
+@use '../../sass/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #999;
+
+  &__heading {
+    color: variables.$white;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+  }
+
+  &__icon-container {
+    cursor: pointer;
+  }
+}
