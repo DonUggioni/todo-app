@@ -25,16 +25,16 @@ function ListItem(props) {
           type="checkbox"
           className="item__checkbox"
         />
-        <svg class="item__icon-check">
+        <svg className="item__icon-check">
           <use className="item__svg" xlinkHref={`${icons}#icon-check`} />
         </svg>
       </div>
       <p className={descriptionClasses}>{props.description}</p>
       <div className="item__icons-container">
-        <svg class="item__icon">
+        <svg className="item__icon">
           <use className="item__svg" xlinkHref={`${icons}#edit-pen-icon`} />
         </svg>
-        <svg class="item__icon">
+        <svg onClick={props.onRemoveTodo} className="item__icon">
           <use className="item__svg" xlinkHref={`${icons}#icon-cross`} />
         </svg>
       </div>
