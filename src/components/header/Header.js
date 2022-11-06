@@ -5,18 +5,13 @@ import sunIcon from '../../assets/images/icon-sun.svg';
 import './Header.scss';
 
 function Header() {
-  const [isActive, setIsActive] = useState(false);
-
-  function themeHandler() {
-    setIsActive(() => !isActive);
-  }
   return (
     <div className="header">
       <h1 className="header__heading">todo</h1>
-      <div className="header__icon-container" onClick={themeHandler}>
+      <div className="header__icon-container">
         <img
           className="header__icon"
-          src={isActive ? sunIcon : moonIcon}
+          src={moonIcon}
           alt="Theme switch button"
         />
       </div>

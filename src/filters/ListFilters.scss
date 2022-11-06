@@ -1,0 +1,57 @@
+@use '../sass/variables';
+
+.filter {
+  width: 100%;
+  height: 5rem;
+  background-color: variables.$lt-grey-100;
+  color: variables.$lt-grey-400;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+
+  &__items-left {
+    text-transform: lowercase;
+  }
+
+  &__buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+
+    & .button {
+      border: none;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: inherit;
+      background-color: transparent;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.1s;
+
+      &:hover {
+        color: variables.$lt-grey-500;
+      }
+
+      &:focus {
+        color: variables.$bright-blue;
+        outline: none;
+      }
+    }
+  }
+
+  &__button-clear {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      color: variables.$lt-grey-500;
+    }
+  }
+}

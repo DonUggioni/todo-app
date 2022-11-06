@@ -1,5 +1,15 @@
-// Colors
-$white: rgb(255, 255, 255);
+// Light Theme
+$lt-grey-100: hsl(0, 0%, 98%);
+$lt-grey-200: hsl(236, 33%, 92%);
+$lt-grey-300: hsl(233, 11%, 84%);
+$lt-grey-400: hsl(236, 9%, 61%);
+$lt-grey-500: hsl(235, 19%, 35%);
+
+// Gradients
+$checkbox-gradient: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+
+// Button focus color
+$bright-blue: hsl(220, 98%, 61%);
 
 // Font Sizes
 $h1-l: 4rem;

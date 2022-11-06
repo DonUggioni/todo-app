@@ -1,0 +1,93 @@
+@use '../../sass/variables';
+
+.item {
+  width: 100%;
+  height: 6.4rem;
+  background-color: variables.$lt-grey-100;
+  border-bottom: 1px solid variables.$lt-grey-300;
+
+  display: flex;
+  align-items: center;
+  padding: 0 2.4rem;
+  cursor: pointer;
+
+  &__checkbox-container {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid variables.$lt-grey-300;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    position: relative;
+  }
+
+  &__checkbox-container:hover {
+    border: double 1px transparent;
+    background-image: linear-gradient(
+        variables.$lt-grey-100,
+        variables.$lt-grey-100
+      ),
+      linear-gradient(variables.$checkbox-gradient);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  &__checkbox-container--active {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: double 1px transparent;
+    background-image: linear-gradient(variables.$checkbox-gradient);
+    background-origin: border-box;
+    background-clip: content-box, padding-box;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-check {
+    width: 1.2rem;
+    height: 1rem;
+  }
+
+  &__checkbox {
+    opacity: 0;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+  }
+
+  &__description {
+    color: variables.$lt-grey-500;
+    margin-left: 2.4rem;
+  }
+
+  &__description-checked {
+    text-decoration: line-through;
+    color: variables.$lt-grey-300;
+    margin-left: 2.4rem;
+  }
+
+  &__icons-container {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-left: auto;
+    fill: variables.$lt-grey-500;
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  &:hover .item__icon {
+    visibility: visible;
+  }
+}
