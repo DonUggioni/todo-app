@@ -34,7 +34,7 @@ function ListItem(props) {
         <svg className="item__icon">
           <use className="item__svg" xlinkHref={`${icons}#edit-pen-icon`} />
         </svg>
-        <svg onClick={props.onRemoveTodo} className="item__icon">
+        <svg onClick={props.onClick} className="item__icon">
           <use className="item__svg" xlinkHref={`${icons}#icon-cross`} />
         </svg>
       </div>

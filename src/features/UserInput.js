@@ -23,7 +23,7 @@ export const listDataSlice = createSlice({
       state.value.push(action.payload);
     },
     removeTodo: (state, action) => {
-      state.value.filter((item) => state.value !== action.payload);
+      state.value = state.value.filter((task) => task.id !== action.payload.id);
     },
   },
 });

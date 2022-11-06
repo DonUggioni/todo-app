@@ -14,7 +14,10 @@ function UserInput() {
     e.preventDefault();
     dispatch(
       addTodo({
-        id: todoListItems[todoListItems.length - 1].id + 1,
+        id:
+          todoListItems.length === 0
+            ? 0
+            : todoListItems[todoListItems.length - 1].id + 1,
         task: userInput.current.value,
       })
     );

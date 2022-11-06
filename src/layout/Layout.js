@@ -11,7 +11,7 @@ import ListFilters from '../filters/ListFilters';
 
 function Layout() {
   const todoListItems = useSelector((state) => state.userInput.value);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <main className="main">
@@ -19,7 +19,13 @@ function Layout() {
       <UserInput />
       <div className="list__wrapper">
         {todoListItems.map((item, index) => {
-          return <ListItem description={item.task} key={index} />;
+          return (
+            <ListItem
+              description={item.task}
+              key={index}
+              onClick={() => dispatch(removeTodo({ id: item.id }))}
+            />
+          );
         })}
         <ListFilters />
       </div>
