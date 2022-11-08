@@ -34,8 +34,12 @@ export const listDataSlice = createSlice({
       );
       toggleCompleted.isCompleted = action.payload.isCompleted;
     },
+    clearCompleted: (state) => {
+      state.value = state.value.filter((todo) => todo.isCompleted !== true);
+    },
   },
 });
 
-export const { addTodo, removeTodo, completedTodo } = listDataSlice.actions;
+export const { addTodo, removeTodo, completedTodo, clearCompleted } =
+  listDataSlice.actions;
 export default listDataSlice.reducer;

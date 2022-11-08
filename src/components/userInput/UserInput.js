@@ -9,7 +9,6 @@ function UserInput() {
   const todoListItems = useSelector((state) => state.userInput.value);
   const userInput = useRef();
   const dispatch = useDispatch();
-  console.log(todoListItems[0].isCompleted);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +19,7 @@ function UserInput() {
             ? 0
             : todoListItems[todoListItems.length - 1].id + 1,
         task: userInput.current.value,
+        isCompleted: false,
       })
     );
     userInput.current.value = '';
