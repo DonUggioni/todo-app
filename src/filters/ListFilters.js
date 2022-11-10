@@ -8,6 +8,9 @@ function ListFilters({
   onShowActive,
   onShowCompleted,
   onClearCompleted,
+  classNameAll,
+  classNameActive,
+  classNameCompleted,
 }) {
   const itemsLeft = useSelector((state) =>
     state.userInput.value.filter((todo) => todo.isCompleted !== true)
@@ -17,13 +20,13 @@ function ListFilters({
     <div className="filter">
       <p className="filter__items-left">{itemsLeft.length} items left</p>
       <div className="filter__buttons-container">
-        <button className="button" onClick={onShowAll}>
+        <button className={classNameAll} onClick={onShowAll}>
           All
         </button>
-        <button className="button" onClick={onShowActive}>
+        <button className={classNameActive} onClick={onShowActive}>
           Active
         </button>
-        <button className="button" onClick={onShowCompleted}>
+        <button className={classNameCompleted} onClick={onShowCompleted}>
           Completed
         </button>
       </div>

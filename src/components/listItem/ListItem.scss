@@ -77,7 +77,7 @@
     align-items: center;
     gap: 1.6rem;
     margin-left: auto;
-    fill: variables.$lt-grey-500;
+    fill: variables.$lt-grey-400;
   }
 
   &__icon {
@@ -85,6 +85,11 @@
     height: 1.6rem;
     cursor: pointer;
     visibility: hidden;
+    transition: 0.1s;
+
+    &:hover {
+      fill: variables.$lt-grey-500;
+    }
   }
 
   &:hover .item__icon {

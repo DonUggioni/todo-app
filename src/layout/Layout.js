@@ -120,6 +120,9 @@ function Layout() {
           onShowAll={showAllTodos}
           onShowCompleted={showCompleted}
           onClearCompleted={clearCompletedTodos}
+          classNameAll={showAll ? 'button active' : 'button'}
+          classNameActive={isActiveFilter ? 'button active' : 'button'}
+          classNameCompleted={completed ? 'button active' : 'button'}
         />
       </div>
     </main>
