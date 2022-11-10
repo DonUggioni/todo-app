@@ -1,41 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const DUMMY_DATA = [
-  {
-    id: 0,
-    task: 'Do laundry',
-    isCompleted: false,
-  },
-  {
-    id: 1,
-    task: 'Take a nap',
-    isCompleted: false,
-  },
-  {
-    id: 2,
-    task: 'Do stuff',
-    isCompleted: false,
-  },
-];
+function updateLocalStorage(data) {
+  localStorage.setItem('todo', JSON.stringify(data.value.map((todo) => todo)));
+}
+
+const initialState =
+  localStorage.getItem('todo') !== null
+    ? JSON.parse(localStorage.getItem('todo'))
+    : [];
 
 export const listDataSlice = createSlice({
   name: 'userInput',
-  initialState: { value: DUMMY_DATA },
+  initialState: { value: initialState },
   reducers: {
     addTodo: (state, action) => {
       state.value.push(action.payload);
+      updateLocalStorage(state);
     },
     removeTodo: (state, action) => {
       state.value = state.value.filter((task) => task.id !== action.payload.id);
+      updateLocalStorage(state);
     },
     completedTodo: (state, action) => {
       const toggleCompleted = state.value.find(
         (todo) => todo.id === action.payload.id
       );
       toggleCompleted.isCompleted = action.payload.isCompleted;
+      updateLocalStorage(state);
     },
     clearCompleted: (state) => {
       state.value = state.value.filter((todo) => todo.isCompleted !== true);
+      updateLocalStorage(state);
     },
   },
 });
