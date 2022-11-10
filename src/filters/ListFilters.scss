@@ -41,6 +41,11 @@
     }
   }
 
+  .active {
+    color: variables.$bright-blue;
+    outline: none;
+  }
+
   &__button-clear {
     border: none;
     font-family: inherit;
