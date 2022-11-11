@@ -56,6 +56,7 @@ function Layout() {
                 key={index}
                 onClick={() => dispatch(removeTodo({ id: item.id }))}
                 id={item.id}
+                index={index}
                 listClass={
                   item.isCompleted
                     ? 'item__checkbox-container--active'

@@ -10,6 +10,7 @@
   align-items: center;
   padding: 0 2.4rem;
   cursor: pointer;
+  position: relative;
 
   &__checkbox-container {
     width: 2.4rem;
@@ -70,6 +71,33 @@
     text-decoration: line-through;
     color: variables.$lt-grey-300;
     margin-left: 2.4rem;
+  }
+
+  &__edit {
+    display: flex;
+    align-items: center;
+
+    visibility: hidden;
+  }
+
+  &__edit-input {
+    color: variables.$lt-grey-500;
+    position: absolute;
+    width: 70%;
+    left: 7.2rem;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: variables.$lt-grey-100;
+
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+
+  &__edit--visible {
+    visibility: visible;
   }
 
   &__icons-container {

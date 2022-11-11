@@ -28,6 +28,12 @@ export const listDataSlice = createSlice({
       toggleCompleted.isCompleted = action.payload.isCompleted;
       updateLocalStorage(state);
     },
+    editTodo: (state, action) => {
+      const editedTodo = state.value.find(
+        (todo) => todo.id === action.payload.id
+      );
+      editedTodo.task = action.payload.task;
+    },
     clearCompleted: (state) => {
       state.value = state.value.filter((todo) => todo.isCompleted !== true);
       updateLocalStorage(state);
