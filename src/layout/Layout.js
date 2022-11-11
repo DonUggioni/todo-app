@@ -43,6 +43,11 @@ function Layout() {
     );
   }
 
+  function setBtnActiveClass(state) {
+    if (state) return 'button active';
+    else return 'button';
+  }
+
   return (
     <main className="main">
       <Header />
@@ -100,7 +105,6 @@ function Layout() {
                 <ListItem
                   description={item.task}
                   key={index}
-                  onClick={() => dispatch(removeTodo({ id: item.id }))}
                   id={item.id}
                   listClass={
                     item.isCompleted
@@ -121,9 +125,9 @@ function Layout() {
           onShowAll={showAllTodos}
           onShowCompleted={showCompleted}
           onClearCompleted={clearCompletedTodos}
-          classNameAll={showAll ? 'button active' : 'button'}
-          classNameActive={isActiveFilter ? 'button active' : 'button'}
-          classNameCompleted={completed ? 'button active' : 'button'}
+          classNameAll={setBtnActiveClass(showAll)}
+          classNameActive={setBtnActiveClass(isActiveFilter)}
+          classNameCompleted={setBtnActiveClass(completed)}
         />
       </div>
     </main>
