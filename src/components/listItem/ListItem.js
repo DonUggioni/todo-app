@@ -10,9 +10,6 @@ function ListItem({ description, id, listClass, descriptionClass, index }) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
   const editInput = useRef(null);
-  const editingClasses = isEditing
-    ? 'item__edit item__edit--visible'
-    : 'item__edit';
 
   function checkHandler() {
     setIsActive(() => !isActive);
@@ -52,7 +49,10 @@ function ListItem({ description, id, listClass, descriptionClass, index }) {
       <p className={descriptionClass} onClick={editTodoHandler}>
         {description}
       </p>
-      <form onSubmit={editedTodoHandler} className={editingClasses}>
+      <form
+        onSubmit={editedTodoHandler}
+        className={isEditing ? 'item__edit item__edit--visible' : 'item__edit'}
+      >
         <input
           type="text"
           onBlur={editedTodoHandler}

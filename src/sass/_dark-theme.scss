@@ -1,3 +1,94 @@
+@use './variables.scss';
+
 .dark {
-  background-color: blue;
+  background-color: variables.$dt-grey-700;
+  background-image: url('../assets/images/bg-desktop-dark.jpg');
+
+  & .form {
+    background-color: variables.$dt-grey-600;
+    box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+
+    & input {
+      background-color: inherit;
+      color: variables.$dt-grey-200;
+
+      &::placeholder {
+        color: variables.$dt-grey-300;
+      }
+    }
+
+    &__icon {
+      fill: variables.$dt-grey-300;
+
+      &:hover {
+        fill: variables.$dt-grey-200;
+      }
+    }
+  }
+
+  & .list__wrapper {
+    box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  }
+
+  & .item {
+    background-color: variables.$dt-grey-600;
+    border-bottom: 1px solid variables.$dt-grey-500;
+
+    &__checkbox-container {
+      border: double 1px variables.$dt-grey-500;
+
+      &:hover {
+        background-image: linear-gradient(
+            variables.$dt-grey-600,
+            variables.$dt-grey-600
+          ),
+          linear-gradient(variables.$checkbox-gradient);
+      }
+    }
+
+    &__description {
+      color: variables.$dt-grey-200;
+    }
+
+    &__description-checked {
+      color: variables.$dt-grey-400;
+    }
+
+    &__edit-input {
+      color: variables.$dt-grey-200;
+      background-color: inherit;
+    }
+
+    &__icons-container {
+      fill: variables.$dt-grey-300;
+    }
+
+    &__icon {
+      &:hover {
+        fill: variables.$dt-grey-200;
+      }
+    }
+  }
+
+  & .filter {
+    background-color: variables.$dt-grey-600;
+    color: variables.$dt-grey-400;
+    & .button {
+      color: variables.$dt-grey-400;
+
+      &:hover {
+        color: variables.$dt-grey-200;
+      }
+    }
+
+    &__button-clear {
+      &:hover {
+        color: variables.$dt-grey-200;
+      }
+    }
+  }
+  .active {
+    color: variables.$bright-blue;
+    outline: none;
+  }
 }

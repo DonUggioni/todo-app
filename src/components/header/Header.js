@@ -2,16 +2,26 @@ import React, { useState } from 'react';
 import moonIcon from '../../assets/images/icon-moon.svg';
 import sunIcon from '../../assets/images/icon-sun.svg';
 
+import '../../sass/_dark-theme.scss';
 import './Header.scss';
 
 function Header() {
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  const bodyTag = document.querySelector('body');
+  bodyTag.className = darkTheme ? 'dark' : '';
+
+  function themeHandler() {
+    setDarkTheme(() => !darkTheme);
+  }
+
   return (
     <div className="header">
       <h1 className="header__heading">todo</h1>
-      <div className="header__icon-container">
+      <div onClick={themeHandler} className="header__icon-container">
         <img
           className="header__icon"
-          src={moonIcon}
+          src={darkTheme ? sunIcon : moonIcon}
           alt="Theme switch button"
         />
       </div>
