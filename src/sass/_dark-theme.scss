@@ -86,9 +86,10 @@
         color: variables.$dt-grey-200;
       }
     }
-  }
-  .active {
-    color: variables.$bright-blue;
-    outline: none;
+
+    .active {
+      color: variables.$bright-blue;
+      outline: none;
+    }
   }
 }
