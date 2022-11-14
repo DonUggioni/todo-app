@@ -39,9 +39,19 @@ export const listDataSlice = createSlice({
       state.value = state.value.filter((todo) => todo.isCompleted !== true);
       updateLocalStorage(state);
     },
+    updateListOrder: (state, action) => {
+      state.value = action.payload;
+      updateLocalStorage(state);
+    },
   },
 });
 
-export const { addTodo, removeTodo, completedTodo, clearCompleted, editTodo } =
-  listDataSlice.actions;
+export const {
+  addTodo,
+  removeTodo,
+  completedTodo,
+  clearCompleted,
+  editTodo,
+  updateListOrder,
+} = listDataSlice.actions;
 export default listDataSlice.reducer;

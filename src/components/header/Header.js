@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moonIcon from '../../assets/images/icon-moon.svg';
 import sunIcon from '../../assets/images/icon-sun.svg';
 
@@ -13,7 +13,13 @@ function Header() {
 
   function themeHandler() {
     setDarkTheme(() => !darkTheme);
+    localStorage.setItem('theme', !darkTheme);
   }
+
+  useEffect(() => {
+    const preferedTheme = JSON.parse(localStorage.getItem('theme'));
+    setDarkTheme(preferedTheme);
+  }, []);
 
   return (
     <div className="header">

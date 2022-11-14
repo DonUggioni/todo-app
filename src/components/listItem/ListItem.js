@@ -27,8 +27,8 @@ function ListItem({ description, id, listClass, descriptionClass, index }) {
 
   function editedTodoHandler(e) {
     e.preventDefault();
-    setIsEditing(false);
     dispatch(editTodo({ task: editInput.current.value, id: id }));
+    setIsEditing(false);
   }
 
   return (
@@ -55,6 +55,7 @@ function ListItem({ description, id, listClass, descriptionClass, index }) {
       >
         <input
           type="text"
+          onChange={editedTodoHandler}
           onBlur={editedTodoHandler}
           className="item__edit-input"
           ref={editInput}
