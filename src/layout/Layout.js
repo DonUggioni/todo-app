@@ -6,11 +6,7 @@ import ListItem from '../components/listItem/ListItem';
 import ListFilters from '../filters/ListFilters';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {
-  removeTodo,
-  clearCompleted,
-  updateListOrder,
-} from '../features/UserInput';
+import { clearCompleted, updateListOrder } from '../features/UserInput';
 import { Droppable, Draggable, DragDropContext } from 'react-beautiful-dnd';
 
 import './Layout.scss';
@@ -89,9 +85,6 @@ function Layout() {
                         >
                           <ListItem
                             description={item.task}
-                            onClick={() =>
-                              dispatch(removeTodo({ id: item.id }))
-                            }
                             id={item.id}
                             index={index}
                             listClass={
@@ -119,7 +112,6 @@ function Layout() {
                       <ListItem
                         description={item.task}
                         key={index}
-                        onClick={() => dispatch(removeTodo({ id: item.id }))}
                         id={item.id}
                         listClass={
                           item.isCompleted
