@@ -9,11 +9,17 @@
 
   &__heading {
     color: variables.$lt-grey-100;
+    font-size: clamp(2rem, 5vw, 4rem);
     text-transform: uppercase;
     letter-spacing: 1.5rem;
   }
 
   &__icon-container {
     cursor: pointer;
+    padding-right: 1rem;
+
+    & img {
+      width: clamp(2rem, 5vw, 2.6rem);
+    }
   }
 }

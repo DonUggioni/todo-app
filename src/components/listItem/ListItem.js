@@ -52,10 +52,10 @@ function ListItem({ description, id, listClass, descriptionClass, index }) {
       <form
         onSubmit={editedTodoHandler}
         className={isEditing ? 'item__edit item__edit--visible' : 'item__edit'}
+        onChange={editedTodoHandler}
       >
         <input
           type="text"
-          onChange={editedTodoHandler}
           onBlur={editedTodoHandler}
           className="item__edit-input"
           ref={editInput}
