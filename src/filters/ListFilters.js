@@ -33,6 +33,7 @@ function ListFilters({
       <button className="filter__button-clear" onClick={onClearCompleted}>
         Clear Completed
       </button>
+      <p className="dnd_info">Drag and drop to reorder list</p>
     </div>
   );
 }

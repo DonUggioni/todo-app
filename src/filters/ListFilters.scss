@@ -80,3 +80,16 @@
     }
   }
 }
+
+.dnd_info {
+  position: absolute;
+  width: 100%;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  @media screen and (max-width: 540px) {
+    top: 15rem;
+  }
+}
